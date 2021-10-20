@@ -9,28 +9,30 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="300dp"
-        android:layout_height="282dp"
-
-
+        android:layout_width="410dp"
+        android:layout_height="281dp"
         android:layout_marginBottom="330dp"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
         app:lottie_autoPlay="true"
         app:lottie_fileName="28891_quiz_bump.json"
         app:lottie_loop="true" />
 
     <Button
+        android:background="@drawable/bordes_redondos"
+        android:textColor="@color/black"
         android:id="@+id/buttonInicio"
-        android:layout_width="wrap_content"
+
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
+        android:textSize="16dp"
         android:layout_marginEnd="150dp"
         android:text="Jugar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,13 +40,33 @@
         app:layout_constraintTop_toBottomOf="@+id/animation_view" />
 
     <Button
+        android:background="@drawable/bordes_redondos"
+        android:textColor="@color/black"
         android:id="@+id/buttonComoJugar"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-150dp"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        android:onClick="ComoJugar"
         android:text="Como jugar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSalir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInicio" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInicio"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <Button
+        android:background="@drawable/bordes_redondos"
+        android:textColor="@color/black"
+        android:id="@+id/buttonSalir"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="116dp"
+        android:text="Salir"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
