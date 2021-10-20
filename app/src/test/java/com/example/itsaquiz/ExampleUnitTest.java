@@ -1,4 +1,4 @@
-package com.example.practica;
+package com.example.itsaquiz;
 
 import org.junit.Test;
 
