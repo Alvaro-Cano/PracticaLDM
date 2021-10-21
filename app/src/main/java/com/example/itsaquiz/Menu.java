@@ -28,7 +28,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void Salir (View v){
-        finish();
+       finishAffinity();
+       System.exit(0);
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.example.itsaquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -71,15 +73,24 @@ public class Pregunta5 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageButton btn1 = view.findViewById(R.id.imageButton3);
-        ImageButton btn2 = view.findViewById(R.id.imageButton4);
+        ImageButton btn1 = view.findViewById(R.id.imageButton);
+        ImageButton btn2 = view.findViewById(R.id.imageButton2);
 
         final NavController navController = Navigation.findNavController(view);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.pregunta4);
+                Intent intent = new Intent(getContext(),PuntuacionFinal.class);
+                startActivity(intent);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),PuntuacionFinal.class);
+                startActivity(intent);
             }
         });
 
