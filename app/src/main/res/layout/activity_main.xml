@@ -31,6 +31,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="150dp"
         android:background="@drawable/bordes_redondos"
+        android:onClick="Jugar"
         android:text="Jugar"
         android:textColor="@color/black"
         android:textSize="16dp"

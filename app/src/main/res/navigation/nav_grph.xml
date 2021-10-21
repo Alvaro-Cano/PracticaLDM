@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_grph"
+    app:startDestination="@id/pregunta1">
+
+    <fragment
+        android:id="@+id/pregunta1"
+        android:name="com.example.itsaquiz.Pregunta1"
+        android:label="fragment_pregunta1"
+        tools:layout="@layout/fragment_pregunta1" >
+        <action
+            android:id="@+id/action_pregunta1_to_pregunta2"
+            app:destination="@id/pregunta2" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta2"
+        android:name="com.example.itsaquiz.Pregunta2"
+        android:label="fragment_pregunta2"
+        tools:layout="@layout/fragment_pregunta2" >
+        <action
+            android:id="@+id/action_pregunta2_to_pregunta3"
+            app:destination="@id/pregunta3" />
+        <action
+            android:id="@+id/action_pregunta2_to_pregunta1"
+            app:destination="@id/pregunta1" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta3"
+        android:name="com.example.itsaquiz.Pregunta3"
+        android:label="fragment_pregunta3"
+        tools:layout="@layout/fragment_pregunta3" >
+        <action
+            android:id="@+id/action_pregunta3_to_pregunta4"
+            app:destination="@id/pregunta4" />
+        <action
+            android:id="@+id/action_pregunta3_to_pregunta2"
+            app:destination="@id/pregunta2" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta4"
+        android:name="com.example.itsaquiz.Pregunta4"
+        android:label="fragment_pregunta4"
+        tools:layout="@layout/fragment_pregunta4" >
+        <action
+            android:id="@+id/action_pregunta4_to_pregunta5"
+            app:destination="@id/pregunta5" />
+        <action
+            android:id="@+id/action_pregunta4_to_pregunta3"
+            app:destination="@id/pregunta3" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregunta5"
+        android:name="com.example.itsaquiz.Pregunta5"
+        android:label="fragment_pregunta5"
+        tools:layout="@layout/fragment_pregunta5" />
+</navigation>
