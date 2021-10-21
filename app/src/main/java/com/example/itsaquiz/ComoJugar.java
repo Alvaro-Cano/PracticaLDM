@@ -2,6 +2,7 @@ package com.example.itsaquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -26,5 +27,13 @@ public class ComoJugar extends AppCompatActivity {
             }
         }, 4000);
     }
+    public void Jugar (View v){
+        Intent play = new Intent(this,Juego.class);
+        startActivity(play);
     }
+    public void Inicio (View v){
+        Intent play = new Intent(this,Menu.class);
+        startActivity(play);
+    }
+}
 
