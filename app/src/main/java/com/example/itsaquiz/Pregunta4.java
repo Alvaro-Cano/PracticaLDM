@@ -2,11 +2,17 @@ package com.example.itsaquiz;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +66,50 @@ public class Pregunta4 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pregunta4, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        RadioButton rbtn1 = view.findViewById(R.id.radioButton1);
+        RadioButton rbtn2 = view.findViewById(R.id.radioButton2);
+        RadioButton rbtn3 = view.findViewById(R.id.radioButton3);
+        RadioButton rbtn4 = view.findViewById(R.id.radioButton4);
+
+        final NavController navController = Navigation.findNavController(view);
+
+        rbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta5);
+            }
+        });
+        rbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta5);
+            }
+        });
+        rbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta5);
+            }
+        });
+        rbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(3+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta5);
+            }
+        });
     }
 }

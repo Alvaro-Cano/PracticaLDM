@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,13 +14,15 @@
         android:layout_height="95dp"
         android:layout_gravity="center"
         android:text="PREGUNTA 1"
+        android:textColor="@color/black"
         android:textSize="35dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:text="¿Israel aprobo el examen teorico?"
+        android:text="¿Qué tenía Salvador Dalí de característico?"
+        android:textColor="@color/black"
         android:textSize="20dp" />
 
     <RadioGroup
@@ -27,36 +30,33 @@
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textColor="@color/black"
+            android:text="Su gracia" />
+
+        <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="RadioButton" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="RadioButton" />
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="RadioButton" />
+            android:textColor="@color/black"
+            android:text="Sus gafas" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="RadioButton" />
+            android:textColor="@color/black"
+            android:text="Su bigote" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textColor="@color/black"
+            android:text="Su ropa" />
 
     </RadioGroup>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Siguiente" />
-
 
 </LinearLayout>

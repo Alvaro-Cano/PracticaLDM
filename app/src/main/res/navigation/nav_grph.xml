@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_pregunta2_to_pregunta3"
             app:destination="@id/pregunta3" />
-        <action
-            android:id="@+id/action_pregunta2_to_pregunta1"
-            app:destination="@id/pregunta1" />
     </fragment>
     <fragment
         android:id="@+id/pregunta3"
@@ -34,9 +31,6 @@
         <action
             android:id="@+id/action_pregunta3_to_pregunta4"
             app:destination="@id/pregunta4" />
-        <action
-            android:id="@+id/action_pregunta3_to_pregunta2"
-            app:destination="@id/pregunta2" />
     </fragment>
     <fragment
         android:id="@+id/pregunta4"
@@ -46,13 +40,14 @@
         <action
             android:id="@+id/action_pregunta4_to_pregunta5"
             app:destination="@id/pregunta5" />
-        <action
-            android:id="@+id/action_pregunta4_to_pregunta3"
-            app:destination="@id/pregunta3" />
     </fragment>
     <fragment
         android:id="@+id/pregunta5"
         android:name="com.example.itsaquiz.Pregunta5"
         android:label="fragment_pregunta5"
-        tools:layout="@layout/fragment_pregunta5" />
+        tools:layout="@layout/fragment_pregunta5" >
+        <action
+            android:id="@+id/action_pregunta5_to_pregunta4"
+            app:destination="@id/pregunta4" />
+    </fragment>
 </navigation>

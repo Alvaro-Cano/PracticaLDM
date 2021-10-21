@@ -2,11 +2,18 @@ package com.example.itsaquiz;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,8 @@ public class Pregunta2 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextView textView;
+
 
     public Pregunta2() {
         // Required empty public constructor
@@ -60,5 +69,51 @@ public class Pregunta2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pregunta2, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        RadioButton rbtn1 = view.findViewById(R.id.radioButton1);
+        RadioButton rbtn2 = view.findViewById(R.id.radioButton2);
+        RadioButton rbtn3 = view.findViewById(R.id.radioButton3);
+        RadioButton rbtn4 = view.findViewById(R.id.radioButton4);
+
+
+        final NavController navController = Navigation.findNavController(view);
+
+        rbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(3+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta3);
+            }
+        });
+        rbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta3);
+            }
+        });
+        rbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta3);
+            }
+        });
+        rbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                Navigation.findNavController(view).navigate(R.id.pregunta3);
+            }
+        });
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class PuntuacionFinal extends AppCompatActivity {
 
-    private int puntuacion;
+    public static int puntuacion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
