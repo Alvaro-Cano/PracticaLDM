@@ -1,5 +1,8 @@
 package com.example.itsaquiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -94,6 +97,23 @@ public class Pregunta2 extends Fragment {
         rbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Fallaste");
+                builder.setMessage("Te has equivocado. ¿Quieres salir?");
+
+                Intent intent = new Intent(getContext(),Menu.class);
+
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(getContext(),Menu.class);
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton("No", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
                 Navigation.findNavController(view).navigate(R.id.pregunta3);
@@ -102,6 +122,23 @@ public class Pregunta2 extends Fragment {
         rbtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Fallaste");
+                builder.setMessage("Te has equivocado. ¿Quieres salir?");
+
+                Intent intent = new Intent(getContext(),Menu.class);
+
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(getContext(),Menu.class);
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton("No", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
                 Navigation.findNavController(view).navigate(R.id.pregunta3);
@@ -110,6 +147,23 @@ public class Pregunta2 extends Fragment {
         rbtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Fallaste");
+                builder.setMessage("Te has equivocado. ¿Quieres salir?");
+
+                Intent intent = new Intent(getContext(),Menu.class);
+
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(getContext(),Menu.class);
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton("No", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
                 Navigation.findNavController(view).navigate(R.id.pregunta3);

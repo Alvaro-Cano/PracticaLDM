@@ -2,4 +2,6 @@
     <string name="app_name">Its a quiz</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ganado">¡¡Felicidades parece ser que has ganado!!</string>
+    <string name="derrota">Vaya esta vez no pudiste ganar...</string>
 </resources>

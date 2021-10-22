@@ -2,7 +2,10 @@ package com.example.itsaquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class PuntuacionFinal extends AppCompatActivity {
 
@@ -11,7 +14,18 @@ public class PuntuacionFinal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_puntuacion_final);
+        if (puntuacion<0){
+            setPuntuacion(0);
+        }
+        if (puntuacion<7) {
+            setContentView(R.layout.derrota_puntuacionfinal);
+            TextView textView = (TextView) findViewById(R.id.textViewPuntuacionD);
+            textView.setText(puntuacion+" /15 puntos conseguidos");
+        }else {
+            setContentView(R.layout.activity_puntuacion_final);
+            TextView textView = (TextView) findViewById(R.id.textViewPuntuacionV);
+            textView.setText(puntuacion+" /15 puntos conseguidos");
+        }
     }
 
     public int getPuntuacion() {
@@ -20,5 +34,15 @@ public class PuntuacionFinal extends AppCompatActivity {
 
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
+    }
+
+    public void Menu (View v){
+        Intent como = new Intent(this,Menu.class);
+        startActivity(como);
+    }
+
+    public void Respuestas (View v){
+        Intent como = new Intent(this,Respuestas.class);
+        startActivity(como);
     }
 }

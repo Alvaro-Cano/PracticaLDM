@@ -1,5 +1,7 @@
 package com.example.itsaquiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -81,6 +83,8 @@ public class Pregunta5 extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                puntuacionFinal.setPuntuacion(3+puntuacionFinal.getPuntuacion());
                 Intent intent = new Intent(getContext(),PuntuacionFinal.class);
                 startActivity(intent);
             }
@@ -89,8 +93,32 @@ public class Pregunta5 extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),PuntuacionFinal.class);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Fallaste");
+                builder.setMessage("Te has equivocado. ¿Quieres salir?");
+
+                Intent intent = new Intent(getContext(),Menu.class);
+
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(getContext(),Menu.class);
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
+                        puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                        Intent intent = new Intent(getContext(),PuntuacionFinal.class);
+                        startActivity(intent);
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
             }
         });
 
