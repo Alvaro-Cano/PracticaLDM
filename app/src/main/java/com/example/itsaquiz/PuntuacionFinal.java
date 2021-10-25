@@ -45,4 +45,9 @@ public class PuntuacionFinal extends AppCompatActivity {
         Intent como = new Intent(this,Respuestas.class);
         startActivity(como);
     }
+    public void comprobarNegatividad(){
+        if (this.getPuntuacion() <0){
+            this.setPuntuacion(0);
+        }
+    }
 }

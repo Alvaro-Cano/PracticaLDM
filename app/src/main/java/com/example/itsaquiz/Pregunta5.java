@@ -111,6 +111,7 @@ public class Pregunta5 extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                         puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                        puntuacionFinal.comprobarNegatividad();
                         Intent intent = new Intent(getContext(),PuntuacionFinal.class);
                         startActivity(intent);
                     }

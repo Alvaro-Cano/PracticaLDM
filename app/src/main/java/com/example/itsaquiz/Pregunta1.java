@@ -69,7 +69,6 @@ public class Pregunta1 extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pregunta1, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -103,6 +102,8 @@ public class Pregunta1 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
+
                 Navigation.findNavController(view).navigate(R.id.pregunta2);
             }
         });
@@ -128,6 +129,7 @@ public class Pregunta1 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
                 Navigation.findNavController(view).navigate(R.id.pregunta2);
             }
         });
@@ -162,6 +164,7 @@ public class Pregunta1 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
                 Navigation.findNavController(view).navigate(R.id.pregunta2);
             }
         });

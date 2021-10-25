@@ -116,6 +116,7 @@ public class Pregunta2 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
                 Navigation.findNavController(view).navigate(R.id.pregunta3);
             }
         });
@@ -141,6 +142,7 @@ public class Pregunta2 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
                 Navigation.findNavController(view).navigate(R.id.pregunta3);
             }
         });
@@ -166,6 +168,7 @@ public class Pregunta2 extends Fragment {
 
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(-2+puntuacionFinal.getPuntuacion());
+                puntuacionFinal.comprobarNegatividad();
                 Navigation.findNavController(view).navigate(R.id.pregunta3);
             }
         });
