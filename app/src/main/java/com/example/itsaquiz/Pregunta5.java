@@ -83,6 +83,12 @@ public class Pregunta5 extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("¡Correcto!");
+                builder.setMessage("¡Enhorabuena has acertado!. ¡Sigue así!.");
+                builder.setPositiveButton("Continuar", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
                 PuntuacionFinal puntuacionFinal = new PuntuacionFinal();
                 puntuacionFinal.setPuntuacion(3+puntuacionFinal.getPuntuacion());
                 Intent intent = new Intent(getContext(),PuntuacionFinal.class);
