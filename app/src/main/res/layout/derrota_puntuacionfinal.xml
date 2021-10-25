@@ -38,8 +38,8 @@
 
     <Button
         android:id="@+id/buttonRespuestas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="47dp"
         android:layout_marginBottom="30dp"
@@ -61,6 +61,7 @@
         android:textSize="20dp"
         android:textAlignment="center"
         android:textStyle="italic"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -74,6 +75,7 @@
         android:textSize="20dp"
         android:textAlignment="center"
         android:textStyle="italic"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFelicitacion" />
