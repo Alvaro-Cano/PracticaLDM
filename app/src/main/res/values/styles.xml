@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="ActionBar" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">#FF9800</item>
-        <item name="colorPrimaryDark">#F57C00</item>
+        <item name="colorPrimary">#70c763</item>
+        <item name="colorPrimaryDark">#bdecb6</item>
     </style>
 </resources>
