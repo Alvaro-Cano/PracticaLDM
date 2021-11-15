@@ -22,6 +22,7 @@ public class HowToUse extends AppCompatActivity {
         TextView tv1 = (TextView)findViewById(R.id.textView);
         TextView tv2 = (TextView)findViewById(R.id.textView2);
         TextView tv3 = (TextView)findViewById(R.id.textView3);
+        TextView tv4 = (TextView)findViewById(R.id.textView4);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -29,6 +30,7 @@ public class HowToUse extends AppCompatActivity {
                 tv1.setVisibility(View.VISIBLE);
                 tv2.setVisibility(View.VISIBLE);
                 tv3.setVisibility(View.VISIBLE);
+                tv4.setVisibility(View.VISIBLE);
             }
         }, 4000);
     }
