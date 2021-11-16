@@ -3,7 +3,9 @@ package com.example.practica2;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class Builds extends AppCompatActivity {
 
@@ -17,5 +19,9 @@ public class Builds extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
 
 
+    }
+    public void createBuild(View v){
+        Intent create = new Intent(this, CreateBuilds.class);
+        startActivity(create);
     }
 }
