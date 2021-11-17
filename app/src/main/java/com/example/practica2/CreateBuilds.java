@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,8 @@ public class CreateBuilds extends AppCompatActivity {
             et_objeto6.setText("");
 
             Toast.makeText(this,"Registrado Correctamente",Toast.LENGTH_LONG).show();
+            Intent salir = new Intent(this,Builds.class);
+            startActivity(salir);
         } else {
             Toast.makeText(this,"Faltan campos por rellenar",Toast.LENGTH_LONG).show();
         }

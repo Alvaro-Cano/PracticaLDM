@@ -1,6 +1,7 @@
 package com.example.practica2;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -23,5 +24,17 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
+    }
+    public ArrayList llenar_lv(){
+        ArrayList<String> lista = new ArrayList<>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        String q = "SELECT * FROM builds";
+        Cursor registros = database.rawQuery(q,null);
+        if(registros.moveToFirst()){
+            do{
+                lista.add(registros.getString(1));
+            }while(registros.moveToNext());
+        }
+        return lista;
     }
 }
