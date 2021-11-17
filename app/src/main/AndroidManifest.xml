@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/ActionBar">
         <activity
+            android:name=".MyBuilds"
+            android:exported="false" />
+        <activity
             android:name=".CreateBuilds"
             android:exported="false" />
         <activity
