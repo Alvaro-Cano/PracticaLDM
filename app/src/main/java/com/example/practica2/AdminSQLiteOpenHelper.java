@@ -18,7 +18,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase miBBDD) {
-        miBBDD.execSQL("create table builds (codigo int primary key, nombre text,campeon text,descripcion text,objeto1 text,objeto2 text,objeto3 text,objeto4 text,objeto5 text,objeto6 text)");
+        miBBDD.execSQL("create table builds (nombre text primary key,campeon text,descripcion text,objeto1 text,objeto2 text,objeto3 text,objeto4 text,objeto5 text,objeto6 text)");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         Cursor registros = database.rawQuery(q,null);
         if(registros.moveToFirst()){
             do{
-                lista.add(registros.getString(1));
+                lista.add(registros.getString(0));
             }while(registros.moveToNext());
         }
         return lista;
