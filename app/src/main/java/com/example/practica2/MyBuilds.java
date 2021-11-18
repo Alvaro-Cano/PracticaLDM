@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MyBuilds extends AppCompatActivity {
+
+    private EditText et_nombre,et_campeon,et_descripcion,et_objeto1,et_objeto2,et_objeto3,et_objeto4,et_objeto5,et_objeto6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,41 @@ public class MyBuilds extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setIcon(R.mipmap.ic_launcher_2);
         actionBar.setDisplayShowHomeEnabled(true);
+
+        et_nombre= (EditText) findViewById(R.id.txt_nombre);
+        et_campeon= (EditText) findViewById(R.id.txt_campeon);
+        et_descripcion= (EditText) findViewById(R.id.txt_descripcion);
+        et_objeto1= (EditText) findViewById(R.id.txt_objeto1);
+        et_objeto2= (EditText) findViewById(R.id.txt_objeto2);
+        et_objeto3= (EditText) findViewById(R.id.txt_objeto3);
+        et_objeto4= (EditText) findViewById(R.id.txt_objeto4);
+        et_objeto5= (EditText) findViewById(R.id.txt_objeto5);
+        et_objeto6= (EditText) findViewById(R.id.txt_objeto6);
+
+
+        Buscar();
+    }
+
+    public void Buscar(){
+        AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper(this,"gestion",null,1);
+        SQLiteDatabase BdD = admin.getWritableDatabase();
+        String valor = getIntent().getStringExtra("Name");
+
+        if(!valor.isEmpty()){
+            Cursor fila = BdD.rawQuery("SELECT * FROM builds WHERE nombre="+valor,null);
+            if(fila.moveToFirst()){
+                et_nombre.setText(fila.getString(1));
+                et_campeon.setText(fila.getString(2));
+                et_descripcion.setText(fila.getString(3));
+                et_objeto1.setText(fila.getString(4));
+                et_objeto2.setText(fila.getString(5));
+                et_objeto3.setText(fila.getString(6));
+                et_objeto4.setText(fila.getString(7));
+                et_objeto5.setText(fila.getString(8));
+                et_objeto6.setText(fila.getString(9));
+            }
+        }
+        BdD.close();
     }
 
     public void Modificar(View view) {
