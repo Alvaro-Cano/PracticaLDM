@@ -194,10 +194,10 @@ public class PantallaJuego extends Pantalla {
     private void drawRunningUI() {
         Graficos g = juego.getGraphics();
 
-        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64);
+        g.drawPixmap(Assets.botonpausa, 0, 0);
         g.drawLine(0, 416, 480, 416, Color.BLACK);
-        g.drawPixmap(Assets.botones, 0, 416, 64, 64, 64, 64);
-        g.drawPixmap(Assets.botones, 256, 416, 0, 64, 64, 64);
+        g.drawPixmap(Assets.botonatras, 0, 416);
+        g.drawPixmap(Assets.botonadelante, 256, 416);
     }
 
     private void drawPausedUI() {
@@ -210,8 +210,8 @@ public class PantallaJuego extends Pantalla {
     private void drawGameOverUI() {
         Graficos g = juego.getGraphics();
 
-        g.drawPixmap(Assets.finjuego, 62, 100);
-        g.drawPixmap(Assets.botones, 128, 200, 0, 128, 64, 64);
+        g.drawPixmap(Assets.finjuego, 55, 25);
+        g.drawPixmap(Assets.botoncancelar, 128, 200);
         g.drawLine(0, 416, 480, 416, Color.BLACK);
     }
 

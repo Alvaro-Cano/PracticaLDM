@@ -7,11 +7,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icono_bardo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icono_bardo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EjemploJuegoPiratas">
+        android:theme="@style/ActionBar">
 
         android:icon="@drawable/icon" android:debuggable="false" android:label="JollyRoger">
 

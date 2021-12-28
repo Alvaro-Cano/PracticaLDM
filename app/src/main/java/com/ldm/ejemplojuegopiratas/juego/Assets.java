@@ -8,6 +8,16 @@ public class Assets {
     public static Pixmap logo;
     public static Pixmap menuprincipal;
     public static Pixmap botones;
+
+    public static Pixmap botonadelante;
+    public static Pixmap botonatras;
+    public static Pixmap botoncancelar;
+    public static Pixmap botonpausa;
+    public static Pixmap botonsilencio;
+    public static Pixmap botonvolumen;
+    public static Pixmap bardofondo;
+
+
     public static Pixmap ayuda1;
     public static Pixmap ayuda2;
     public static Pixmap ayuda3;

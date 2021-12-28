@@ -17,6 +17,15 @@ public class LoadingScreen extends Pantalla{
         Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
         Assets.menuprincipal = g.newPixmap("menuprincipal.png", PixmapFormat.ARGB4444);
         Assets.botones = g.newPixmap("botones.png", PixmapFormat.ARGB4444);
+
+        Assets.botonadelante = g.newPixmap("botonadelante.png", PixmapFormat.ARGB4444);
+        Assets.botonatras = g.newPixmap("botonatras.png", PixmapFormat.ARGB4444);
+        Assets.botoncancelar = g.newPixmap("botoncancelar.png", PixmapFormat.ARGB4444);
+        Assets.botonpausa = g.newPixmap("botonpausa.png", PixmapFormat.ARGB4444);
+        Assets.botonsilencio = g.newPixmap("botonsilencio.png", PixmapFormat.ARGB4444);
+        Assets.botonvolumen = g.newPixmap("botonvolumen.png", PixmapFormat.ARGB4444);
+        Assets.bardofondo = g.newPixmap("bardofondo.png", PixmapFormat.ARGB4444);
+
         Assets.ayuda1 = g.newPixmap("ayuda1.png", PixmapFormat.ARGB4444);
         Assets.ayuda2 = g.newPixmap("ayuda2.png", PixmapFormat.ARGB4444);
         Assets.ayuda3 = g.newPixmap("ayuda3.png", PixmapFormat.ARGB4444);
