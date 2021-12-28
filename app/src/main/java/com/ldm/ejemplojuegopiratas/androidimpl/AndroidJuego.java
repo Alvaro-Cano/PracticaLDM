@@ -11,6 +11,9 @@ import android.os.PowerManager.WakeLock;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.ldm.ejemplojuegopiratas.Audio;
 import com.ldm.ejemplojuegopiratas.FileIO;
 import com.ldm.ejemplojuegopiratas.Juego;
@@ -19,7 +22,7 @@ import com.ldm.ejemplojuegopiratas.Input;
 import com.ldm.ejemplojuegopiratas.Pantalla;
 import com.ldm.ejemplojuegopiratas.juego.R;
 
-public abstract class AndroidJuego extends Activity implements Juego {
+public abstract class AndroidJuego extends AppCompatActivity implements Juego {
     AndroidFastRenderView renderView;
     Graficos graficos;
     Audio audio;
@@ -33,6 +36,10 @@ public abstract class AndroidJuego extends Activity implements Juego {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setIcon(R.mipmap.icono_bardo);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         int frameBufferWidth = isLandscape ? 480 : 320;
