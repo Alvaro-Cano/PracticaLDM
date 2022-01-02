@@ -34,6 +34,10 @@ public class Assets {
     public static Pixmap botin2;
     public static Pixmap botin3;
 
+    public static Pixmap ayuda;
+    public static Pixmap puntuaciones;
+    public static Pixmap jugar;
+
     public static Sonido pulsar;
     public static Sonido ataque;
     public static Sonido derrota;

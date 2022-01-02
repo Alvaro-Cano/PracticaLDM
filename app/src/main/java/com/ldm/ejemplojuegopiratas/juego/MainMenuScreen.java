@@ -26,7 +26,7 @@ public class MainMenuScreen extends Pantalla {
                     if(Configuraciones.sonidoHabilitado)
                         Assets.pulsar.play(1);
                 }
-                if(inBounds(event, 64, 220, 192, 42) ) {
+                if(inBounds(event, 112, 220, 92, 42) ) {
                     juego.setScreen(new PantallaJuego(juego));
                     if(Configuraciones.sonidoHabilitado)
                     {Assets.pulsar.play(1);
@@ -34,13 +34,13 @@ public class MainMenuScreen extends Pantalla {
 
                     return;
                 }
-                if(inBounds(event, 64, 220 + 42, 192, 42) ) {
+                if(inBounds(event, 90, 220 + 42, 132, 42) ) {
                     juego.setScreen(new PantallaMaximasPuntuaciones(juego));
                     if(Configuraciones.sonidoHabilitado)
                         Assets.pulsar.play(1);
                     return;
                 }
-                if(inBounds(event, 64, 220 + 84, 192, 42) ) {
+                if(inBounds(event, 112, 220 + 84, 95, 42) ) {
                     juego.setScreen(new PantallaAyuda(juego));
                     if(Configuraciones.sonidoHabilitado)
                         Assets.pulsar.play(1);
@@ -64,7 +64,9 @@ public class MainMenuScreen extends Pantalla {
 
         g.drawPixmap(Assets.bardofondo, 0, 0);
         g.drawPixmap(Assets.logo, 32, 20);
-        g.drawPixmap(Assets.menuprincipal, 64, 220);
+        g.drawPixmap(Assets.jugar, 112, 220);
+        g.drawPixmap(Assets.puntuaciones, 90, 262);
+        g.drawPixmap(Assets.ayuda, 112, 304);
         if(Configuraciones.sonidoHabilitado)
             g.drawPixmap(Assets.botonvolumen, 0, 416);
         else
