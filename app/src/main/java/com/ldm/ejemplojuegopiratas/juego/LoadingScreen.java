@@ -28,6 +28,7 @@ public class LoadingScreen extends Pantalla{
         Assets.puntuaciones = g.newPixmap("puntuaciones.png", PixmapFormat.ARGB4444);
         Assets.ayuda = g.newPixmap("ayuda.png", PixmapFormat.ARGB4444);
         Assets.jugar = g.newPixmap("jugar.png", PixmapFormat.ARGB4444);
+        Assets.puntuacioness = g.newPixmap("puntuacioness.png", PixmapFormat.ARGB4444);
 
         Assets.ayuda1 = g.newPixmap("ayuda1.png", PixmapFormat.ARGB4444);
         Assets.ayuda2 = g.newPixmap("ayuda2.png", PixmapFormat.ARGB4444);
@@ -47,7 +48,9 @@ public class LoadingScreen extends Pantalla{
         Assets.pulsar = juego.getAudio().nuevoSonido("pulsar.ogg");
         Assets.ataque = juego.getAudio().nuevoSonido("ataque.ogg");
         Assets.derrota = juego.getAudio().nuevoSonido("derrota.ogg");
-
+        Assets.homeaudio = juego.getAudio().nuevaMusica("homeaudio.ogg");
+        Assets.homeaudio.play();
+        Assets.homeaudio.setLooping(true);
 
         Configuraciones.cargar(juego.getFileIO());
         juego.setScreen(new MainMenuScreen(juego));

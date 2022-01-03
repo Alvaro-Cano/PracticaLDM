@@ -1,10 +1,13 @@
 package com.ldm.ejemplojuegopiratas.juego;
 
+import android.media.MediaPlayer;
+
 import java.util.List;
 import com.ldm.ejemplojuegopiratas.Juego;
 import com.ldm.ejemplojuegopiratas.Graficos;
 import com.ldm.ejemplojuegopiratas.Input.TouchEvent;
 import com.ldm.ejemplojuegopiratas.Pantalla;
+import com.ldm.ejemplojuegopiratas.androidimpl.AndroidJuego;
 
 public class MainMenuScreen extends Pantalla {
     public MainMenuScreen(Juego juego) {
@@ -23,27 +26,30 @@ public class MainMenuScreen extends Pantalla {
             if(event.type == TouchEvent.TOUCH_UP) {
                 if(inBounds(event, 0, g.getHeight() - 64, 64, 64)) {
                     Configuraciones.sonidoHabilitado = !Configuraciones.sonidoHabilitado;
-                    if(Configuraciones.sonidoHabilitado)
-                        Assets.pulsar.play(1);
+                    if(Configuraciones.sonidoHabilitado) {
+                        Assets.pulsar.play(100);
+                        Assets.homeaudio.play();
+                    } else {
+                        Assets.homeaudio.pause();
+                    }
                 }
                 if(inBounds(event, 112, 220, 92, 42) ) {
                     juego.setScreen(new PantallaJuego(juego));
                     if(Configuraciones.sonidoHabilitado)
-                    {Assets.pulsar.play(1);
+                    {Assets.pulsar.play(100);
                     }
-
                     return;
                 }
                 if(inBounds(event, 90, 220 + 42, 132, 42) ) {
                     juego.setScreen(new PantallaMaximasPuntuaciones(juego));
                     if(Configuraciones.sonidoHabilitado)
-                        Assets.pulsar.play(1);
+                        Assets.pulsar.play(100);
                     return;
                 }
                 if(inBounds(event, 112, 220 + 84, 95, 42) ) {
                     juego.setScreen(new PantallaAyuda(juego));
                     if(Configuraciones.sonidoHabilitado)
-                        Assets.pulsar.play(1);
+                        Assets.pulsar.play(100);
                     return;
                 }
             }
@@ -61,9 +67,8 @@ public class MainMenuScreen extends Pantalla {
     @Override
     public void present(float deltaTime) {
         Graficos g = juego.getGraphics();
-
         g.drawPixmap(Assets.bardofondo, 0, 0);
-        g.drawPixmap(Assets.logo, 32, 20);
+        g.drawPixmap(Assets.logo, 67, 40);
         g.drawPixmap(Assets.jugar, 112, 220);
         g.drawPixmap(Assets.puntuaciones, 90, 262);
         g.drawPixmap(Assets.ayuda, 112, 304);

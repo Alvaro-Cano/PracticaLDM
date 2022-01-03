@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +22,13 @@ import com.ldm.ejemplojuegopiratas.FileIO;
 import com.ldm.ejemplojuegopiratas.Juego;
 import com.ldm.ejemplojuegopiratas.Graficos;
 import com.ldm.ejemplojuegopiratas.Input;
+import com.ldm.ejemplojuegopiratas.Musica;
 import com.ldm.ejemplojuegopiratas.Pantalla;
+import com.ldm.ejemplojuegopiratas.juego.Assets;
+import com.ldm.ejemplojuegopiratas.juego.Configuraciones;
 import com.ldm.ejemplojuegopiratas.juego.R;
+
+import java.util.List;
 
 public abstract class AndroidJuego extends Activity implements Juego {
     AndroidFastRenderView renderView;
@@ -30,6 +38,7 @@ public abstract class AndroidJuego extends Activity implements Juego {
     FileIO fileIO;
     Pantalla pantalla;
     WakeLock wakeLock;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +52,6 @@ public abstract class AndroidJuego extends Activity implements Juego {
         actionBar.setIcon(R.mipmap.icono_bardo);
         actionBar.setDisplayShowHomeEnabled(true);
         */
-
 
         boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         int frameBufferWidth = isLandscape ? 480 : 320;
@@ -67,6 +75,7 @@ public abstract class AndroidJuego extends Activity implements Juego {
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "GLGame");
     }
+
 
     @Override
     public void onResume() {
