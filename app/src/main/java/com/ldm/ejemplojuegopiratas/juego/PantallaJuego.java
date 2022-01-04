@@ -149,6 +149,7 @@ public class PantallaJuego extends Pantalla {
         JollyRoger jollyroger = mundo.jollyroger;
         Tripulacion head = jollyroger.partes.get(0);
         Botin botin = mundo.botin;
+        Seta seta = mundo.seta;
 
 
         Pixmap stainPixmap = null;
@@ -161,6 +162,12 @@ public class PantallaJuego extends Pantalla {
         int x = botin.x * 32;
         int y = botin.y * 32;
         g.drawPixmap(stainPixmap, x, y);
+
+        Pixmap setaPixmap = null;
+        setaPixmap = Assets.seta;
+        int setaX = seta.x * 32;
+        int setaY = seta.y * 32;
+        g.drawPixmap(setaPixmap, setaX, setaY);
 
         int len = jollyroger.partes.size();
         for(int i = 1; i < len; i++) {

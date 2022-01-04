@@ -36,6 +36,7 @@ public class PantallaAyuda3 extends Pantalla {
         Graficos g = juego.getGraphics();
         g.drawPixmap(Assets.fondo, 0, 0);
         g.drawPixmap(Assets.ayuda3, 64, 100);
+        g.drawPixmap(Assets.ayudaSeta, 64, 210);
         g.drawPixmap(Assets.botoncancelar, 256, 416);
     }
 

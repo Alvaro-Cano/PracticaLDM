@@ -6,11 +6,13 @@ public class Mundo {
     static final int MUNDO_ANCHO = 10;
     static final int MUNDO_ALTO = 13;
     static final int INCREMENTO_PUNTUACION = 10;
+    static final int DECREMENTO_PUNTUACION = -5;
     static final float TICK_INICIAL = 0.5f;
     static final float TICK_DECREMENTO = 0.05f;
 
     public JollyRoger jollyroger;
     public Botin botin;
+    public Seta seta;
     public boolean finalJuego = false;
     public int puntuacion = 0;
 
@@ -22,6 +24,7 @@ public class Mundo {
     public Mundo() {
         jollyroger = new JollyRoger();
         colocarBotin();
+        colocarSeta();
     }
 
     private void colocarBotin() {
@@ -54,6 +57,36 @@ public class Mundo {
         botin = new Botin(botinX, botinY, random.nextInt(3));
     }
 
+    private void colocarSeta() {
+        for (int x = 0; x < MUNDO_ANCHO; x++) {
+            for (int y = 0; y < MUNDO_ALTO; y++) {
+                campos[x][y] = false;
+            }
+        }
+
+        int len = jollyroger.partes.size();
+        for (int i = 0; i < len; i++) {
+            Tripulacion parte = jollyroger.partes.get(i);
+            campos[parte.x][parte.y] = true;
+        }
+
+        int setaX = random.nextInt(MUNDO_ANCHO);
+        int setaY = random.nextInt(MUNDO_ALTO);
+        while (true) {
+            if (campos[setaX][setaY] == false)
+                break;
+            setaX += 1;
+            if (setaX >= MUNDO_ANCHO) {
+                setaX = 0;
+                setaY += 1;
+                if (setaY >= MUNDO_ALTO) {
+                    setaY = 0;
+                }
+            }
+        }
+        seta = new Seta(setaX, setaY);
+    }
+
     public void update(float deltaTime) {
         if (finalJuego)
 
@@ -79,6 +112,17 @@ public class Mundo {
                 } else {
                     colocarBotin();
                 }
+
+                if (puntuacion % 100 == 0 && tick - TICK_DECREMENTO > 0) {
+                    tick -= TICK_DECREMENTO;
+                }
+            }
+
+            if (head.x == seta.x && head.y == seta.y) {
+                if(puntuacion != 0){
+                    puntuacion += DECREMENTO_PUNTUACION;
+                }
+                colocarSeta();
 
                 if (puntuacion % 100 == 0 && tick - TICK_DECREMENTO > 0) {
                     tick -= TICK_DECREMENTO;

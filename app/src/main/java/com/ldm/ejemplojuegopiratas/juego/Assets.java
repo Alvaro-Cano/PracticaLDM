@@ -23,6 +23,7 @@ public class Assets {
     public static Pixmap ayuda1;
     public static Pixmap ayuda2;
     public static Pixmap ayuda3;
+    public static Pixmap ayudaSeta;
     public static Pixmap numeros;
     public static Pixmap preparado;
     public static Pixmap menupausa;
@@ -35,6 +36,7 @@ public class Assets {
     public static Pixmap botin1;
     public static Pixmap botin2;
     public static Pixmap botin3;
+    public static Pixmap seta;
 
     public static Pixmap ayuda;
     public static Pixmap puntuaciones;
