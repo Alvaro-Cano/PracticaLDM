@@ -47,7 +47,9 @@ public abstract class AndroidJuego extends Activity implements Juego {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 
-        /*
+        /* Hemos comentado las lineas del actionbar ya que no nos gustaba como se veia un actionbar en un juego ademas de que movia
+        todas las coordenadas, tamaño de botones y demas elementos y empeoraba la experiencia del juego.
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setIcon(R.mipmap.icono_bardo);
         actionBar.setDisplayShowHomeEnabled(true);
